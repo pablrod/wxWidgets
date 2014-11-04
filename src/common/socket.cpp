@@ -1295,9 +1295,11 @@ wxSocketEventFlags wxSocketImpl::Select(wxSocketEventFlags flags,
     if ( m_fd == INVALID_SOCKET )
         return (wxSOCKET_LOST_FLAG & flags);
 
-    struct timeval tv;
-    if ( timeout )
-        tv = *timeout;
+    TIMEVAL tv;
+    if ( timeout ) {
+        tv.tv_sec = timeout->tv_sec;
+        tv.tv_usec = timeout->tv_usec;
+    }
     else
         tv.tv_sec = tv.tv_usec = 0;
 

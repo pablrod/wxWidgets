@@ -68,7 +68,7 @@ static WNetCloseEnumPtr s_pWNetCloseEnum;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Globals/Statics
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-static long s_cancelSearch = FALSE;
+static long long unsigned s_cancelSearch = FALSE;
 
 struct FileInfo
 {
